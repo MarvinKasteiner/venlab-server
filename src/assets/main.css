@@ -1,0 +1,37 @@
+@import './base.css';
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-weight: normal;
+}
+
+a,
+.green {
+    text-decoration: none;
+    /* Using the new accent variable for light/dark mode compatibility */
+    color: var(--color-accent);
+    transition: 0.4s;
+    padding: 3px;
+}
+
+@media (hover: hover) {
+    a:hover {
+        /* Using a transparent version of the accent color for hover background */
+        background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        display: flex;
+        place-items: center;
+    }
+
+    #app {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 2rem;
+    }
+}

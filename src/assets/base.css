@@ -1,0 +1,99 @@
+:root {
+    /* Teal/Primary Colors */
+    --custom-c-teal: #008080; /* Primary Teal */
+    --custom-c-teal-soft: #009999;
+    --custom-c-teal-mute: #00b3b3;
+
+    /* Black/Dark Background Colors */
+    --custom-c-black: #1a1a1a;
+    --custom-c-black-soft: #242424;
+    --custom-c-black-mute: #2e2e2e;
+
+    /* White/Light Background Colors */
+    --custom-c-white: #ffffff;
+    --custom-c-white-soft: #f8f8f8;
+    --custom-c-white-mute: #f2f2f2;
+
+    /* Accent/Highlight Color (Orange) */
+    --custom-c-accent: #ff8c00;
+
+    /* Dividers */
+    --custom-c-divider-light-1: rgba(0, 128, 128, 0.25); /* Teal accent */
+    --custom-c-divider-light-2: rgba(0, 128, 128, 0.1);
+    --custom-c-divider-dark-1: rgba(255, 140, 0, 0.65); /* Orange accent */
+    --custom-c-divider-dark-2: rgba(255, 140, 0, 0.4);
+
+    /* Text Colors */
+    --custom-c-text-light-1: var(--custom-c-black); /* Dark text on light background */
+    --custom-c-text-light-2: rgba(26, 26, 26, 0.66);
+    --custom-c-text-dark-1: var(--custom-c-white); /* Light text on dark background */
+    --custom-c-text-dark-2: rgba(255, 255, 255, 0.75);
+}
+
+/* semantic color variables for this project */
+:root {
+    /* Light Theme */
+    --color-background: var(--custom-c-white);
+    --color-background-soft: var(--custom-c-white-soft);
+    --color-background-mute: var(--custom-c-white-mute);
+
+    --color-border: var(--custom-c-divider-light-2);
+    --color-border-hover: var(--custom-c-divider-light-1);
+
+    --color-heading: var(--custom-c-text-light-1);
+    --color-text: var(--custom-c-text-light-2); /* Changed to use muted text for body */
+    --color-accent: var(--custom-c-teal); /* New accent variable for links/highlights */
+
+    --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Theme */
+        --color-background: var(--custom-c-black);
+        --color-background-soft: var(--custom-c-black-soft);
+        --color-background-mute: var(--custom-c-black-mute);
+
+        --color-border: var(--custom-c-divider-dark-2);
+        --color-border-hover: var(--custom-c-divider-dark-1);
+
+        --color-heading: var(--custom-c-text-dark-1);
+        --color-text: var(--custom-c-text-dark-2); /* Changed to use muted text for body */
+        --color-accent: var(--custom-c-accent); /* Orange accent in dark mode */
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition:
+            color 0.5s,
+            background-color 0.5s;
+    line-height: 1.6;
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Fira Sans',
+            'Droid Sans',
+            'Helvetica Neue',
+            sans-serif;
+    font-size: 16px; /* Increased font size for better readability */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
