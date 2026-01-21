@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-    base:"/insy5-informationssysteme-vue-pwa-insy_vue-pwa_erdsieck_kasteiner_soukup/",
+    base: '/venlab-server/',
     plugins: [
         vue(),
         VitePWA({
@@ -14,7 +14,7 @@ export default defineConfig({
             workbox: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,json,vue,txt,woff2}']
             },
-            includeAssets: ['favicon.ico'],
+            includeAssets: ['favicon.ico', 'pwa-192x192.png', 'pwa-512x512.png'],
             manifest: {
                 name: 'VenLab PWA',
                 short_name: 'VenLab',
@@ -22,19 +22,26 @@ export default defineConfig({
                 theme_color: '#112d4e',
                 background_color: '#ffffff',
                 display: 'standalone',
-                scope: '/insy5-informationssysteme-vue-pwa-insy_vue-pwa_erdsieck_kasteiner_soukup/',
-                start_url: '/insy5-informationssysteme-vue-pwa-insy_vue-pwa_erdsieck_kasteiner_soukup/',
+                scope: '/venlab-server/',
+                start_url: '/venlab-server/',
                 icons: [
                     {
-                        src: '/favicon.ico',
-                        sizes: '48x48',
-                        type: 'image/x-icon'
+                        src: 'pwa-192x192.png',
+                        sizes: '192x192',
+                        type: 'image/png',
+                        purpose: 'any'
                     },
                     {
-                        src: '/favicon.ico',
-                        sizes: '192x192',
-                        type: 'image/x-icon',
-                        purpose: 'any maskable'
+                        src: 'pwa-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                        purpose: 'any'
+                    },
+                    {
+                        src: 'pwa-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                        purpose: 'maskable'
                     }
                 ]
             }
